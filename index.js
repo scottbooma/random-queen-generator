@@ -1,6 +1,9 @@
-getQueenData().then(randomQueenInfo => {
-    console.log(randomQueenInfo)
-    createQueenInfo(randomQueenInfo)
+const button = document.querySelector("button")
+
+button.addEventListener("click", event => {
+    getQueenData().then(randomQueenInfo => {
+        createQueenInfo(randomQueenInfo)
+    })
 })
 
 function getRandomNumber(max) {
