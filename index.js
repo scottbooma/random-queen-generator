@@ -12,7 +12,7 @@ function getRandomNumber(max) {
 
 async function getListOfQueens() {
     try {
-        const response = await fetch("https://cors.bridged.cc/http://www.nokeynoshade.party/api/queens/all")
+        const response = await fetch("http://www.nokeynoshade.party/api/queens/all")
         const list = await response.json()
         return list
 
@@ -36,7 +36,7 @@ async function getRandomQueen() {
 async function getQueenData() {
     try {
         const randomQueen = await getRandomQueen()
-        const request = await fetch(`https://cors.bridged.cc/http://www.nokeynoshade.party/api/queens/${randomQueen.id}`)
+        const request = await fetch(`http://www.nokeynoshade.party/api/queens/${randomQueen.id}`)
         const randomQueenData = await request.json()
         return randomQueenData
     }
@@ -54,7 +54,7 @@ function createQueenInfo(queen) {
     queenInfoContainer.innerHTML = `
         <h2>${queen.name}</h2>
         <img src="${queen.image_url}" alt="${queen.name}">
-        <p>${queen.quote}</p>
+        <p>"${queen.quote}"</p>
         <p>Season(s): ${getQueenSeasons(queen)}</p>
     `
 }
